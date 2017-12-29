@@ -34,8 +34,6 @@ module Parser
       cat_xml = RestClient.get(url)
       doc = Nokogiri::XML(cat_xml)
       img_url = doc.xpath("//url").text # 텍스트만 출력하기 위해 .text 함
-
-      return [cat]
     end
   end
 

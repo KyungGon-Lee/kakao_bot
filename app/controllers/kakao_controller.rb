@@ -29,7 +29,6 @@ class KakaoController < ApplicationController
       animal = Parser::Animal.new
       img_url = animal.cat
 
-
     elsif user_message == "영화"
       image = true
       naver_movie = Parser::Movie.new
