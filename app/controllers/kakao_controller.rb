@@ -36,7 +36,7 @@ class KakaoController < ApplicationController
       naver_movie = Parser::Movie.new
       naver_movie_info = naver_movie.naver
       return_text = naver_movie_info[0]
-      img_url = naver_movie_info[1]  
+      img_url = naver_movie_info[1]
     else
       return_text = "사용 가능 명령어 로또, 메뉴, 고양이, 영화 를 쳐보세요!"
     end
@@ -48,7 +48,7 @@ class KakaoController < ApplicationController
     #   # :keyboard = "" # 생략 가능
     # }
     # home_keyboard = {:type => "text"}
-    home_keyboard = { :type => "buttons", :buttons => ["로또", "메뉴", "고양이", "영화"] }
+    home_keyboard = { :type => "buttons", :buttons => ["메뉴", "고양이", "영화", "로또"] }
 
     return_message_with_img = {
       :message => { :text => return_text, :photo => {:url => img_url, :width => 640, :height => 480} },
