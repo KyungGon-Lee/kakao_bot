@@ -57,7 +57,7 @@ class KakaoController < ApplicationController
     #   :message => {
     #     :text => user_message
     #     },
-    #   # :keyboard = "" # 생략 가능
+    #   # :keyboard = "" # 생략 가능 
     # }
     home_keyboard = {:type => "text"}
 
