@@ -38,13 +38,13 @@ class KakaoController < ApplicationController
     home_keyboard = {:type => "text"}
 
     return_message_with_img = {
-      :message => { :text => "return_text", :photo => {:url => cat_url, :width => 640, :height => 480}  }
-      # :keyboard => home_keyboard
+      :message => { :text => "return_text", :photo => {:url => cat_url, :width => 640, :height => 480} },
+      :keyboard => home_keyboard
     }
 
     return_message = {
-     :message => {:text => "return_text"}
-     # :keyboard => home_keyboard
+     :message => { :text => "return_text" },
+     :keyboard => home_keyboard
     }
 
   if image
@@ -52,5 +52,5 @@ class KakaoController < ApplicationController
   else
     render json: return_message
   end
-
+end
 end
