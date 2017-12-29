@@ -34,20 +34,23 @@ class KakaoController < ApplicationController
       doc = Nokogiri::HTML(movie_html)
       movie_title = Array.new
       movie_info = Hash.new
+
       doc.css("ul.lst_detail_t1 dt a").each do |title|
         movie_title << title.text
       end
+
       doc.css("ul.lst_detail_t1 li").each do |movie|
   			movie_info[movie.css("dl dt.tit a").text] = {
   				:url => movie.css("div.thumb img").attribute('src').to_s,
   				:star => movie.css("dl.info_star span.num").text
   			}
       end
+
       sample_movie = movie_title.sample
       return_text = sample_movie + " " + movie_info[sample_movie][:star]
       cat_url = movie_info[sample_movie][:url]
     else
-      return_text == "사용 가능 명령어 로또, 메뉴, 고양이"
+      return_text = "사용 가능 명령어 로또, 메뉴, 고양이"
     end
 
     # return_message = {
@@ -64,7 +67,7 @@ class KakaoController < ApplicationController
     }
 
     return_message = {
-     :message => { :text => return_text },
+     :message => { :text => return_text, },
      :keyboard => home_keyboard
     }
 
