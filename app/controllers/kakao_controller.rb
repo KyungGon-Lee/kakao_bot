@@ -3,7 +3,8 @@ class KakaoController < ApplicationController
 
 
   def keyboard
-    home_keyboard = { :type => "text"}
+    # home_keyboard = { :type => "text"}
+    home_keyboard= { :type => "button", :buttons => ["로또", "메뉴", "고양이", "영화"] }
     render json: home_keyboard
   end
 
@@ -45,7 +46,8 @@ class KakaoController < ApplicationController
     #     },
     #   # :keyboard = "" # 생략 가능
     # }
-    home_keyboard = {:type => "text"}
+    # home_keyboard = {:type => "text"}
+    home_keyboard= { :type => "button", :buttons => ["로또", "메뉴", "고양이", "영화"] }
 
     return_message_with_img = {
       :message => { :text => return_text, :photo => {:url => img_url, :width => 640, :height => 480} },
