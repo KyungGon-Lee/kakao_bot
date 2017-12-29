@@ -1,10 +1,11 @@
 require 'parser' # 헬퍼에다가 모듈화 해놧음
 class KakaoController < ApplicationController
-
+# AIzaSyALWzqL8t1VXLVxCSIChKKGCv-UVHqvbQQ
+# 구글 커스텀 서치 api
 
   def keyboard
     # home_keyboard = { :type => "text"}
-    home_keyboard = { :type => "buttons", :buttons => ["로또", "메뉴", "고양이", "영화"] }
+    home_keyboard = { :type => "buttons", :buttons => ["메뉴", "고양이", "영화", "로또"] }
     render json: home_keyboard
   end
 
@@ -21,11 +22,11 @@ class KakaoController < ApplicationController
     return_text = (1..45).to_a.sample(6).to_s
 
     elsif user_message == "메뉴"
-      return_text = ["돈까스", "스테이크", "다이어트", "삼각김밥", "치킨", "피자", "햄버거"].sample
+      return_text = ["돈까스", "스테이크", "다이어트", "삼각김밥", "치킨", "피자", "햄버거", "샌드위치"].sample
 
     elsif user_message == "고양이"
       # 고양이 사진
-      return_text = "나만 고양이 없어"
+      return_text = "나만 고양이 없어 ㅠㅠ"
       image = true
       animal = Parser::Animal.new
       img_url = animal.cat
