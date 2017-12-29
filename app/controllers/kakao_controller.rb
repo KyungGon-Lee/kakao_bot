@@ -36,7 +36,8 @@ class KakaoController < ApplicationController
     #   # :keyboard = "" # 생략 가능
     # }
     home_keyboard = {:type => "text"}
-
+    render json: home_keyboard
+    
     return_message_with_img = {
       :message => { :text => "return_text", :photo => {:url => cat_url, :width => 640, :height => 480} }
       # :keyboard => home_keyboard
