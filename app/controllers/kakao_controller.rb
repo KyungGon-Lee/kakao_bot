@@ -4,7 +4,7 @@ class KakaoController < ApplicationController
 
   def keyboard
     # home_keyboard = { :type => "text"}
-    home_keyboard= { :type => "button", :buttons => ["로또", "메뉴", "고양이", "영화"] }
+    home_keyboard= { :type => "buttons", :buttons => ["로또", "메뉴", "고양이", "영화"] }
     render json: home_keyboard
   end
 
