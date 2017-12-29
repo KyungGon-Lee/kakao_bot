@@ -18,7 +18,7 @@ class KakaoController < ApplicationController
       return_text = (1..45).to_a.sample(6).to_s
 
     elsif user_message == "메뉴"
-      return_text = ["20층", "시골집", "다이어트"].sample
+      return_text = ["돈까스", "스테이크", "다이어트", "삼각김밥", "치킨", "피자", "햄버거"].sample
 
     elsif user_message == "고양이"
       # 고양이 사진
