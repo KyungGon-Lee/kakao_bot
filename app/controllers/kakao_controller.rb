@@ -1,7 +1,7 @@
 
 class KakaoController < ApplicationController
   def keyboard
-    home_keyboard = {type => "text"}
+    home_keyboard = { :type => "text"}
     render json: home_keyboard
   end
 
@@ -22,6 +22,7 @@ class KakaoController < ApplicationController
 
     elsif user_message == "고양이"
       # 고양이 사진
+      return_text = "나만 고양이 없어"
       image = true
       url = "http://thecatapi.com/api/images/get?format=xml&type=jpg"
       cat_xml = RestClient.get(url)
@@ -29,9 +30,11 @@ class KakaoController < ApplicationController
       cat_url = doc.xpath("//url").text # 텍스트만 출력하기 위해 .text 함
 
     elsif user_message == "영화"
+      image = true
       url = "http://movie.naver.com/movie/running/current.nhn?view=list&tab=normal&order=reserve"
       movie_html = RestClient.get(url)
       doc = Nokogiri::HTML(movie_html)
+
       movie_title = Array.new
       movie_info = Hash.new
 
@@ -57,7 +60,7 @@ class KakaoController < ApplicationController
     #   :message => {
     #     :text => user_message
     #     },
-    #   # :keyboard = "" # 생략 가능 
+    #   # :keyboard = "" # 생략 가능
     # }
     home_keyboard = {:type => "text"}
 
