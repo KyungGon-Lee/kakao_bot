@@ -4,7 +4,7 @@ class KakaoController < ApplicationController
 
   def keyboard
     # home_keyboard = { :type => "text"}
-    home_keyboard= { :type => "buttons", :buttons => ["로또", "메뉴", "고양이", "영화"] }
+    home_keyboard = { :type => "buttons", :buttons => ["로또", "메뉴", "고양이", "영화"] }
     render json: home_keyboard
   end
 
@@ -18,7 +18,7 @@ class KakaoController < ApplicationController
     # 다른 명령어가 들어왔을 때
 
     if user_message == "로또"
-      return_text = (1..45).to_a.sample(6).to_s
+    return_text = (1..45).to_a.sample(6).to_s
 
     elsif user_message == "메뉴"
       return_text = ["돈까스", "스테이크", "다이어트", "삼각김밥", "치킨", "피자", "햄버거"].sample
