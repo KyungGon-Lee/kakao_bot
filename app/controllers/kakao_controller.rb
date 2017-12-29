@@ -53,7 +53,7 @@ class KakaoController < ApplicationController
       return_text = sample_movie + " " + movie_info[sample_movie][:star]
       cat_url = movie_info[sample_movie][:url]
     else
-      return_text = "사용 가능 명령어 로또, 메뉴, 고양이"
+      return_text = "사용 가능 명령어 로또, 메뉴, 고양이, 영화"
     end
 
     # return_message = {
